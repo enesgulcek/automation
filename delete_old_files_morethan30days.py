@@ -1,11 +1,14 @@
 import os
 import time
 
-# 30 gün öncesini hesapla
+# calculate 30 days 
 days = 30
 time_in_secs = time.time() - (days * 24 * 60 * 60)
 
-# Belirli bir klasördeki dosyaları ve klasörleri silmek için fonksiyon
+# current directory
+folder_path = os.getcwd()
+
+# definition to delete files and folders in a specific folder
 def delete_old_files(folder_path):
     print(folder_path)
     for root, dirs, files in os.walk(folder_path, topdown=False):
@@ -30,9 +33,5 @@ def delete_old_files(folder_path):
                 os.rmdir(dir_path)
                 print(f"{dir_path} klasörü silindi.")
 
-# Klasör yolunu belirle
-folder_path = os.getcwd()
-
-# Fonksiyonu çağır
 delete_old_files(folder_path)
 
