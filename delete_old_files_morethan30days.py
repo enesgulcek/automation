@@ -10,7 +10,7 @@ folder_path = os.getcwd()
 
 # definition to delete files and folders in a specific folder
 def delete_old_files(folder_path):
-    print(folder_path)
+    #print(folder_path)
     for root, dirs, files in os.walk(folder_path, topdown=False):
         for file_name in files:
             file_path = os.path.join(root, file_name)
